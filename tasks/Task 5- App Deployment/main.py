@@ -109,7 +109,7 @@ def about_page():
     """)
     
 def model_selection():
-    model_path = r"your_model_path_here"  # Update with your model path
+    model_path = r"tasks/Task 5- App Deployment/model.pkl"  # Model Path
     model = joblib.load(model_path)
 
     # Set the title and the description of the app
@@ -166,7 +166,7 @@ def visualization_page():
     """)
 
     # Load the cleaned space data
-    cleaned_spacedata_path = r"C:\Users\chimi\Desktop\Python Data Science Projects\space_debris_classifications\space_debris_classifications\tasks\Task 6- App Deployment\spacedebris_clean2.csv"
+    cleaned_spacedata_path = r"data/cleaned data/spacedebris_clean2.csv"
     
     cleaned_spacedata = pd.read_csv(cleaned_spacedata_path)
 
@@ -214,7 +214,7 @@ def visualization_page():
     st.pyplot()
 
     # Correlation Plot
-    correlation_data_path = r"C:/Users/chimi/Desktop/Python Data Science Projects/space_debris_classifications/space_debris_classifications/tasks/task 4- Data PreProcessing/spacefinal_cleaned.csv"
+    correlation_data_path = r"data/pre-processed datas-final/spacefinal_cleaned.csv"
     correlation_data = pd.read_csv(correlation_data_path)
 
     plt.figure(figsize=(10, 6))
