@@ -124,26 +124,28 @@ def model_selection():
                      'APOAPSIS', 'PERIAPSIS', 'AP_DIFF', 'SEMIMINOR_AXIS',
                      'ORBITAL_VELOCITY', 'RCS_SIZE_MEDIUM', 'RCS_SIZE_SMALL']
 
+    # Define the ranges based on the analysis
     ranges = {
-    'MEAN_MOTION': (0.1, 1),  
-    'ECCENTRICITY': (0, 0.1),  
-    'INCLINATION': (0, 90),  
-    'RA_OF_ASC_NODE': (0, 180),  
-    'MEAN_ANOMALY': (0, 180),  
-    'REV_AT_EPOCH': (0, 10000), 
-    'BSTAR': (0, 0.1),  
-    'MEAN_MOTION_DOT': (-0.005, 0.05),  
-    'MEAN_MOTION_DDOT': (-0.00002, 0.0001),  
-    'SEMIMAJOR_AXIS': (6500, 200000),  
-    'PERIOD': (87, 10000),  
-    'APOAPSIS': (180, 200000),  
-    'PERIAPSIS': (70, 200000),  
-    'AP_DIFF': (0, 100000), 
-    'SEMIMINOR_AXIS': (6500, 200000), 
-    'ORBITAL_VELOCITY': (1, 5),  
-    'RCS_SIZE_MEDIUM': (0, 1),  
-    'RCS_SIZE_SMALL': (0, 1) 
-}
+        'MEAN_MOTION': (0.1, 1),  # Updated lower bound to 0.1
+        'ECCENTRICITY': (0, 0.1),  # Updated upper bound to 0.1
+        'INCLINATION': (0, 90),  # Updated upper bound to 90
+        'RA_OF_ASC_NODE': (0, 180),  # Updated upper bound to 180
+        'ARG_OF_PERICENTER': (0, 180),  # Updated upper bound to 180
+        'MEAN_ANOMALY': (0, 180),  # Updated upper bound to 180
+        'REV_AT_EPOCH': (0, 10000),  # Updated upper bound to 10000
+        'BSTAR': (0, 0.1),  # Updated upper bound to 0.1
+        'MEAN_MOTION_DOT': (-0.005, 0.05),  # Updated bounds
+        'MEAN_MOTION_DDOT': (-0.00002, 0.0001),  # Updated bounds
+        'SEMIMAJOR_AXIS': (6500, 200000),  # Updated upper bound to 200000
+        'PERIOD': (87, 10000),  # Updated upper bound to 10000
+        'APOAPSIS': (180, 200000),  # Updated upper bound to 200000
+        'PERIAPSIS': (70, 200000),  # Updated upper bound to 200000
+        'AP_DIFF': (0, 100000),  # Updated upper bound to 100000
+        'SEMIMINOR_AXIS': (6500, 200000),  # Updated upper bound to 200000
+        'ORBITAL_VELOCITY': (1, 5),  # Updated upper bound to 5
+        'RCS_SIZE_MEDIUM': (0, 1),  # No change
+        'RCS_SIZE_SMALL': (0, 1)  # No change
+    }
     for feature in feature_names:
         if feature in ['RCS_SIZE_MEDIUM', 'RCS_SIZE_SMALL']:
             input_elements[feature] = st.selectbox(feature, [0, 1])
