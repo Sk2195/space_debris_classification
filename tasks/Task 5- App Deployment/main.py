@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[16]:
-
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
