@@ -1,0 +1,6 @@
+joblib
+matplotlib
+pillow  # PIL Fork (https://pillow.readthedocs.io/en/stable/installation.html)
+pandas
+seaborn
+streamlit
