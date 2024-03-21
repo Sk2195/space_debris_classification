@@ -241,7 +241,7 @@ def visualization_page():
     st.pyplot()
 
     # Correlation Plot
-    correlation_data_path = r"data/pre-processed datas-final/spacefinal_cleaned.csv"
+    correlation_data_path = r"data/pre-processed datas-final"
     correlation_data = pd.read_csv(correlation_data_path)
 
     plt.figure(figsize=(10, 6))
