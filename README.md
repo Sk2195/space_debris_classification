@@ -6,6 +6,7 @@
 ## Project Objective.
 - The objective of this project is to create a model that accurately classifies space debris based on the several factors. By using cutting -edge machine learning techniques to accurately identify space debris, we can promote more safe missions ,and decrease risk of collissions for satellites.
 
+## Project Structure: 
 project/
 │
 ├── Task1DataCleaning/
@@ -31,16 +32,8 @@ project/
     └── data/
         └── preprocessed_data.csv
 
+```markdown
 
-
-
-
-
-
-
-
-
-  
 ### Model Link:
 - The app can can found on this link: https://spacedebrisclassification-bf7gg2bjbjckjcat27nujr.streamlit.app/
 
