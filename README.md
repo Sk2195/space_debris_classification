@@ -21,6 +21,9 @@ Wild F. What is orbital debris? (Grades 5-8) - NASA. NASA. February 2024. https:
 # Feedback:
 - I am always open to feedback. The web app might change sometimes from day to day as I continiously working on making the model better.
 
+# Usage 
+- To run this please clone the project:https://github.com/Sk2195/space_debris_classification.git
+
 ## Project Structure
 ```markdown
 project/
@@ -50,8 +53,7 @@ project/
 
 ```markdown
 
-# Usage 
-- To run this please clone the project:https://github.com/Sk2195/space_debris_classification.git
+
 
 
 
