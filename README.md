@@ -9,30 +9,30 @@
 ### Model Link:
 - The app can can found on this link: https://spacedebrisclassification-bf7gg2bjbjckjcat27nujr.streamlit.app/
 
-# Project Structure 
-tasks/
+project/
+│
 ├── Task1DataCleaning/
-│   └── SpaceDebris-Cleaning.ipynb
-├── Task2EDA-/
-│   └── EDA_spaceDebris.ipynb
-├── Task3DataPreprocessing/
-│   └── Space_df-datapreprocessing.ipynb
+│   ├── DataCleaning.ipynb
+│   └── data/
+│       └── raw_data.csv
+├── Task2EDA/
+│   ├── EDA.ipynb
+│   └── data/
+│       └── cleaned_data.csv
+├── Task3DataPreProcessing/
+│   ├── DataPreProcessing.ipynb
+│   └── data/
+│       ├── cleaned_data.csv
+│       └── preprocessed_data.csv
 ├── Task4Modeling/
-│   └── spacedebrismodeling.ipynb
-└── Task5AppDeployment/
-    ├── assets/
-    │   └── gifs/
-    │       └── [gif files]
-    ├── main.py
-    └── requirements.txt
-
-data/
-├── cleaned_data/
-│   └── [cleaned data files]
-├── raw_data/
-│   └── [original dataset files]
-└── preprocessed_data_final/
-    └── [final preprocessed data file]
+│   ├── Modeling.ipynb
+│   └── data/
+│       └── preprocessed_data.csv
+└── Task5Deployment/
+    ├── model.pkl
+    ├── Deployment.ipynb
+    └── data/
+        └── preprocessed_data.csv
 
 
 
