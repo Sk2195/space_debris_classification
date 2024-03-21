@@ -109,7 +109,7 @@ def about_page():
     """)
     
 def model_selection():
-    model_path = r"assets\model.pkl"  # Update with your model path
+    model_path = r"tasks/Task5AppDeployment/assets/model.pkl"  # Update with your model path
     model = joblib.load(model_path)
 
     # Set the title and the description of the app
