@@ -51,7 +51,6 @@ project/
     └── data/
         └── preprocessed_data.csv
 
-```markdown
 
 
 
