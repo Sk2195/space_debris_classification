@@ -109,7 +109,7 @@ def about_page():
     """)
     
 def model_selection():
-    model_path = r"tasks/Task5AppDeployment/assets/model.pkl"  # Update with your model path
+    model_path = "tasks/Task5AppDeployment/assets/model.pkl"  # Update with your model path
     model = joblib.load(model_path)
 
     # Set the title and the description of the app
@@ -119,16 +119,38 @@ def model_selection():
     # Create input elements for the user input
     input_elements = {}
     feature_names = ['MEAN_MOTION', 'ECCENTRICITY', 'INCLINATION', 'RA_OF_ASC_NODE',
-       'ARG_OF_PERICENTER', 'MEAN_ANOMALY', 'REV_AT_EPOCH', 'BSTAR',
-       'MEAN_MOTION_DOT', 'MEAN_MOTION_DDOT', 'SEMIMAJOR_AXIS', 'PERIOD',
-       'APOAPSIS', 'PERIAPSIS', 'AP_DIFF', 'SEMIMINOR_AXIS',
-       'ORBITAL_VELOCITY', 'RCS_SIZE_MEDIUM', 'RCS_SIZE_SMALL']
+                     'ARG_OF_PERICENTER', 'MEAN_ANOMALY', 'REV_AT_EPOCH', 'BSTAR',
+                     'MEAN_MOTION_DOT', 'MEAN_MOTION_DDOT', 'SEMIMAJOR_AXIS', 'PERIOD',
+                     'APOAPSIS', 'PERIAPSIS', 'AP_DIFF', 'SEMIMINOR_AXIS',
+                     'ORBITAL_VELOCITY', 'RCS_SIZE_MEDIUM', 'RCS_SIZE_SMALL']
+
+    # Define the ranges based on the analysis
+    ranges = {
+        'MEAN_MOTION': (0.5, 17.5),
+        'ECCENTRICITY': (0, 0.3),
+        'INCLINATION': (0, 180),
+        'RA_OF_ASC_NODE': (0, 360),
+        'ARG_OF_PERICENTER': (0, 360),
+        'MEAN_ANOMALY': (0, 360),
+        'REV_AT_EPOCH': (0, 100000),
+        'BSTAR': (0, 1),
+        'MEAN_MOTION_DOT': (-0.015, 0.225),  # Assuming a practical range here; adjust as needed
+        'MEAN_MOTION_DDOT': (-0.000042, 0.00165),  # Assuming a practical range here; adjust as needed
+        'SEMIMAJOR_AXIS': (6500, 305000),  # Expanded based on data
+        'PERIOD': (87, 27810),  # Expanded based on data
+        'APOAPSIS': (180, 372140),  # Expanded based on data
+        'PERIAPSIS': (70, 224550),  # Expanded based on data
+        'AP_DIFF': (0, 292240),  # Expanded based on data
+        'SEMIMINOR_AXIS': (6500, 295130),  # Expanded based on data
+        'ORBITAL_VELOCITY': (1, 8)  # Based on observed range, slightly expanded
+    }
 
     for feature in feature_names:
         if feature in ['RCS_SIZE_MEDIUM', 'RCS_SIZE_SMALL']:
             input_elements[feature] = st.selectbox(feature, [0, 1])
         else:
-            input_elements[feature] = st.slider(feature, 0.0, 10.0) if feature.startswith('BSTAR') else st.slider(feature, 0.0, 180.0)
+            min_val, max_val = ranges[feature]
+            input_elements[feature] = st.slider(feature, min_val, max_val, (min_val + max_val) / 2)
 
     # Create a button for prediction
     if st.button('Predict'):
@@ -146,17 +168,19 @@ def model_selection():
             st.write('Prediction: Space Debris')
         st.write('Probability:', probabilities[0][1])
 
-    # Calculate feature importances
-    importance = model.feature_importances_
+    # Optional: Calculate feature importances if your model supports it
+    try:
+        importance = model.feature_importances_
+        feature_importance = pd.DataFrame({
+            'Feature': feature_names,
+            'Importance': importance[:len(feature_names)]
+        })
 
-    feature_importance = pd.DataFrame({
-        'Feature': feature_names,
-        'Importance': importance[:len(feature_names)]
-    })
-
-    # Display feature importance
-    st.subheader('Feature Importance')
-    st.dataframe(feature_importance)
+        # Display feature importance
+        st.subheader('Feature Importance')
+        st.dataframe(feature_importance)
+    except AttributeError:
+        st.write("Feature importances are not available for the selected model.)
 
 
 def visualization_page():
