@@ -11,7 +11,7 @@
 
 
 ## Project Structure
-' 
+```markdown
 project/
 │
 ├── Task1DataCleaning/
@@ -37,11 +37,10 @@ project/
     └── data/
         └── preprocessed_data.csv
 
-' 
+```markdown
 
 # Usage 
 - To run this please clone the project:https://github.com/Sk2195/space_debris_classification.git
-
 
 
 
