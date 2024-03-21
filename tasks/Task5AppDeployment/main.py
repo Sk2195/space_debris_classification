@@ -134,23 +134,28 @@ def model_selection():
         'MEAN_ANOMALY': (0, 360),
         'REV_AT_EPOCH': (0, 100000),
         'BSTAR': (0, 1),
-        'MEAN_MOTION_DOT': (-0.015, 0.225),  # Assuming a practical range here; adjust as needed
-        'MEAN_MOTION_DDOT': (-0.000042, 0.00165),  # Assuming a practical range here; adjust as needed
-        'SEMIMAJOR_AXIS': (6500, 305000),  # Expanded based on data
-        'PERIOD': (87, 27810),  # Expanded based on data
-        'APOAPSIS': (180, 372140),  # Expanded based on data
-        'PERIAPSIS': (70, 224550),  # Expanded based on data
-        'AP_DIFF': (0, 292240),  # Expanded based on data
-        'SEMIMINOR_AXIS': (6500, 295130),  # Expanded based on data
-        'ORBITAL_VELOCITY': (1, 8)  # Based on observed range, slightly expanded
+        'MEAN_MOTION_DOT': (-0.015, 0.225),  
+        'MEAN_MOTION_DDOT': (-0.000042, 0.00165), 
+        'SEMIMAJOR_AXIS': (6500, 305000),  
+        'PERIOD': (87, 27810)
+        'APOAPSIS': (180, 372140)
+        'PERIAPSIS': (70, 224550)
+        'AP_DIFF': (0, 292240),  
+        'SEMIMINOR_AXIS': (6500, 295130),  
+        'ORBITAL_VELOCITY': (1, 8)  
     }
 
     for feature in feature_names:
-        if feature in ['RCS_SIZE_MEDIUM', 'RCS_SIZE_SMALL']:
-            input_elements[feature] = st.selectbox(feature, [0, 1])
-        else:
-            min_val, max_val = ranges[feature]
-            input_elements[feature] = st.slider(feature, min_val, max_val, (min_val + max_val) / 2)
+    if feature in ['RCS_SIZE_MEDIUM', 'RCS_SIZE_SMALL']:
+        input_elements[feature] = st.selectbox(feature, [0, 1])
+    else:
+        min_val, max_val = ranges[feature]
+        # Ensure min_val, max_val, and the default value are all floats
+        min_val = float(min_val)
+        max_val = float(max_val)
+        default_val = (min_val + max_val) / 2.0  # Explicitly calculate as a float
+        input_elements[feature] = st.slider(feature, min_val, max_val, default_val)
+
 
     # Create a button for prediction
     if st.button('Predict'):
