@@ -50,8 +50,8 @@ footer { visibility: hidden; }
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 # Load GIF assets
-gif_2 = Image.open("assets/gifs/debris2.gif")
-gif_3 = Image.open("assets/gifs/debris3.gif")
+gif_2 = Image.open("tasks/Task5AppDeployment/assets/gifs/debris2.gif")
+gif_3 = Image.open("tasks/Task5AppDeployment/assets/gifs/debris3.gif")
 
 
 def define_homepage():
