@@ -150,10 +150,9 @@ def model_selection():
         input_elements[feature] = st.selectbox(feature, [0, 1])
     else:
         min_val, max_val = ranges[feature]
-        # Ensure min_val, max_val, and the default value are all floats
-        min_val = float(min_val)
+        min_val = float(min_val)  # Ensure consistency in data types
         max_val = float(max_val)
-        default_val = (min_val + max_val) / 2.0  # Explicitly calculate as a float
+        default_val = (min_val + max_val) / 2.0
         input_elements[feature] = st.slider(feature, min_val, max_val, default_val)
 
 
