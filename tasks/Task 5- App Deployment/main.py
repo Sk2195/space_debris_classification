@@ -1,8 +1,17 @@
-import joblib
-import matplotlib.pyplot as plt
-from PIL import Image
+# Data manipulation libraries
 import pandas as pd
+
+# Visualization libraries
+import matplotlib.pyplot as plt
 import seaborn as sns
+
+# Machine learning library (if applicable)
+import joblib
+
+# Image processing library
+from PIL import Image
+
+# Streamlit for building the app
 import streamlit as st
 
 # Disable this warning by disabling the config option:
