@@ -36,17 +36,21 @@ data/
 
 
 
-# Set up and Installation
-- To set up the and install this rep
-
-
 # Usage 
-
+- To run this please clone the project: 
 
 
 
 # Citations: 
+https://www.linkedin.com/news/story/fcc-issues-first-space-debris-fine-5503617/
+https://interconnectedrisks.org/tipping-points/space-debris#:~:text=Given%20that%20these%20objects%20travel,functional%20satellites%20to%20avoid%20collisions.
+https://www.esa.int/Space_Safety/Space_Debris/About_space_debris
+https://www.spacemic.net/pdf/mic4/finalist/08.StoilIvanov_abst.pdf
+https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-orbital-debris-grades-5-8/
 
 
+
+# Feedback:
+- I am always open to feedback. The web app might change sometimes from day to day as I continiously working on making the model better.
 
 
