@@ -2,7 +2,7 @@
 pandas
 
 
-matplotlib
+matplotlib.pyplot
 seaborn
 
 
