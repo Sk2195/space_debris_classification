@@ -180,7 +180,7 @@ def model_selection():
         st.subheader('Feature Importance')
         st.dataframe(feature_importance)
     except AttributeError:
-        st.write("Feature importances are not available for the selected model.)
+        st.write("Feature importances are not available for the selected model.")
 
 
 def visualization_page():
