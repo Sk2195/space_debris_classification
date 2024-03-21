@@ -109,7 +109,7 @@ def about_page():
     """)
     
 def model_selection():
-    model_path = r"assets\model.pkl"  # Update with your model path
+    model_path = r"assets\model.pkl"  
     model = joblib.load(model_path)
 
     # Set the title and the description of the app
@@ -166,7 +166,7 @@ def visualization_page():
     """)
 
     # Load the cleaned space data
-    cleaned_spacedata_path = r"data/cleaned data/spacedebris_clean2.csv"
+    cleaned_spacedata_path = r"data\cleaned data\spacedebris_clean2.csv"
     
     cleaned_spacedata = pd.read_csv(cleaned_spacedata_path)
 
@@ -214,7 +214,7 @@ def visualization_page():
     st.pyplot()
 
     # Correlation Plot
-    correlation_data_path = r"data/pre-processed datas-final/spacefinal_cleaned.csv"
+    correlation_data_path = r"data\pre-processed datas-final\spacefinal_cleaned.csv"
     correlation_data = pd.read_csv(correlation_data_path)
 
     plt.figure(figsize=(10, 6))
