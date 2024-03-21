@@ -144,16 +144,15 @@ def model_selection():
         'SEMIMINOR_AXIS': (6500, 295130),  
         'ORBITAL_VELOCITY': (1, 8)  
     }
-
     for feature in feature_names:
-    if feature in ['RCS_SIZE_MEDIUM', 'RCS_SIZE_SMALL']:
-        input_elements[feature] = st.selectbox(feature, [0, 1])
-    else:
-        min_val, max_val = ranges[feature]
-        min_val = float(min_val)  # Ensure consistency in data types
-        max_val = float(max_val)
-        default_val = (min_val + max_val) / 2.0
-        input_elements[feature] = st.slider(feature, min_val, max_val, default_val)
+        if feature in ['RCS_SIZE_MEDIUM', 'RCS_SIZE_SMALL']:
+            input_elements[feature] = st.selectbox(feature, [0, 1])
+        else:
+            min_val, max_val = ranges[feature]
+            min_val = float(min_val)  # Ensure consistency in data types
+            max_val = float(max_val)
+            default_val = (min_val + max_val) / 2.0
+            input_elements[feature] = st.slider(feature, min_val, max_val, default_val)
 
 
     # Create a button for prediction
