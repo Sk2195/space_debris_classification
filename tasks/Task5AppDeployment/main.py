@@ -137,9 +137,9 @@ def model_selection():
         'MEAN_MOTION_DOT': (-0.015, 0.225),  
         'MEAN_MOTION_DDOT': (-0.000042, 0.00165), 
         'SEMIMAJOR_AXIS': (6500, 305000),  
-        'PERIOD': (87, 27810)
-        'APOAPSIS': (180, 372140)
-        'PERIAPSIS': (70, 224550)
+        'PERIOD': (87, 27810),
+        'APOAPSIS': (180, 372140),
+        'PERIAPSIS': (70, 224550),
         'AP_DIFF': (0, 292240),  
         'SEMIMINOR_AXIS': (6500, 295130),  
         'ORBITAL_VELOCITY': (1, 8)  
