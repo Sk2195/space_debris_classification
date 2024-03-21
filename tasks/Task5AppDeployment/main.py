@@ -124,26 +124,26 @@ def model_selection():
                      'APOAPSIS', 'PERIAPSIS', 'AP_DIFF', 'SEMIMINOR_AXIS',
                      'ORBITAL_VELOCITY', 'RCS_SIZE_MEDIUM', 'RCS_SIZE_SMALL']
 
-    # Define the ranges based on the analysis
     ranges = {
-        'MEAN_MOTION': (0.5, 17.5),
-        'ECCENTRICITY': (0, 0.3),
-        'INCLINATION': (0, 180),
-        'RA_OF_ASC_NODE': (0, 360),
-        'ARG_OF_PERICENTER': (0, 360),
-        'MEAN_ANOMALY': (0, 360),
-        'REV_AT_EPOCH': (0, 100000),
-        'BSTAR': (0, 1),
-        'MEAN_MOTION_DOT': (-0.015, 0.225),  
-        'MEAN_MOTION_DDOT': (-0.000042, 0.00165), 
-        'SEMIMAJOR_AXIS': (6500, 305000),  
-        'PERIOD': (87, 27810),
-        'APOAPSIS': (180, 372140),
-        'PERIAPSIS': (70, 224550),
-        'AP_DIFF': (0, 292240),  
-        'SEMIMINOR_AXIS': (6500, 295130),  
-        'ORBITAL_VELOCITY': (1, 8)  
-    }
+    'MEAN_MOTION': (0.1, 1),  
+    'ECCENTRICITY': (0, 0.1),  
+    'INCLINATION': (0, 90),  
+    'RA_OF_ASC_NODE': (0, 180),  
+    'MEAN_ANOMALY': (0, 180),  
+    'REV_AT_EPOCH': (0, 10000), 
+    'BSTAR': (0, 0.1),  
+    'MEAN_MOTION_DOT': (-0.005, 0.05),  
+    'MEAN_MOTION_DDOT': (-0.00002, 0.0001),  
+    'SEMIMAJOR_AXIS': (6500, 200000),  
+    'PERIOD': (87, 10000),  
+    'APOAPSIS': (180, 200000),  
+    'PERIAPSIS': (70, 200000),  
+    'AP_DIFF': (0, 100000), 
+    'SEMIMINOR_AXIS': (6500, 200000), 
+    'ORBITAL_VELOCITY': (1, 5),  
+    'RCS_SIZE_MEDIUM': (0, 1),  
+    'RCS_SIZE_SMALL': (0, 1) 
+}
     for feature in feature_names:
         if feature in ['RCS_SIZE_MEDIUM', 'RCS_SIZE_SMALL']:
             input_elements[feature] = st.selectbox(feature, [0, 1])
